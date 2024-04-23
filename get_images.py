@@ -19,7 +19,6 @@ def get_images(image_directory):
     # Initialize lists to store images and their labels
     X = []
     y = []
-    
     # Define image file extensions
     extensions = ('jpg', 'png', 'gif')
     
@@ -38,7 +37,7 @@ def get_images(image_directory):
                 if file.endswith(extensions):
                     # Read the image using OpenCV
                     img = cv2.imread(os.path.join(image_directory, subfolder, file))
-                    
+        
                     # Resize the image
                     img = cv2.resize(img, (100, 100))
                     
@@ -50,3 +49,6 @@ def get_images(image_directory):
     
     print("All images are loaded")
     return X, y
+
+
+X, Y = get_images("C:/Users/Ethan/Documents/GitHub/Face-and-Keystroke-Authentication/project_data/project_data")
